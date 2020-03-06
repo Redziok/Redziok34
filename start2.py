@@ -84,3 +84,16 @@ slownik2["klucz"] = "cośtam" #nadpis
 slownik3[0]
 slownik2.keys()
 slownik2.values()
+
+for liczba in range(0, 10, 2): # start, stop ,step
+    print(liczba)
+
+lista = [1,2,3]
+for liczba in range(len(lista))
+    print(liczba)
+
+for litera in "Marianna":
+    print(litera, end='->')
+
+# while True:
+#    print("W nieskończoność")
