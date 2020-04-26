@@ -1,82 +1,236 @@
-# a = input("Podaj zdanie\n")
-# count=0
-# for i in a:
-#     if(i.isspace()):
-#         count=count+1
-# print("",count)
-########################################
-# import sys
-# print("Podaj jakas liczbe")
-# a = sys.stdin.readline()
-# a = int(a)
-# print("Podaj jakas liczbe")
-# b = sys.stdin.readline()
-# b = int(b)
+# class Material:
+#     def __init__(self, rodzaj, dlugosc, szerokosc):
+#         self.rodzaj=rodzaj
+#         self.dlugosc=dlugosc
+#         self.szerokosc=szerokosc
+#         self.opis = "Odzież"
+    
+#     def wyswietl_nazwe(self):
+#         return self.rodzaj
 
-# wynik= a*b
-# wynik = str(wynik)
+# class Ubrania(Material):
+#     def __init__(self, rozmiar, kolor, dla_kogo):
+#         self.rozmiar =rozmiar
+#         self.kolor=kolor
+#         self.dla_kogo=dla_kogo
 
-# sys.stdout.write(wynik)
-##########################################
-# a = input("Podaj liczbe: ")
-# a = int(a)
+#     def wyswietl_dane(self):
+#         return self.rozmiar,self.kolor,self.dla_kogo
 
-# if a >= 0:
-#     print(str(a))
-# elif a < 0:
-#     print(str(-a))
-###########################################
-# a = input("Podaj liczbe a: ")
-# b = input("Podaj liczbe b: ")
-# c = input("Podaj liczbe c: ")
-# a = int(a)
-# b = int(b)
-# c = int(c)
+# class Sweter(Ubrania):
+#     def __init__(self, rodzaj_swetra):
+#         self.rodzaj_swetra=rodzaj_swetra
+    
+#     def wyswietl_dane(self):
+#         return self.rodzaj_swetra
 
-# if (a>0 and a<=10) and (a>b or b>c):
-#     print("spelnione")
-# else:
-#     print("nie spelnione")
-#############################################
-# for liczba in range(0, 5000, 1): # start, stop ,step
-#     if liczba%5==0:
-#         print(liczba)
-#############################################
-# liczba = input("Podaj liczbe: ")
-# liczba = int(liczba)
-# liczba2 = pow(liczba,2)
-# print(str(liczba2))
-#############################################
-# lista = []
-# while len(lista)!=20:
-#     a = input("Podaj liczbe a: ")
-#     lista.insert(0,a)
-#     print('lista: ',lista)
-##############################################
-# liczba = input("Podaj liczbe wielocyfrowa: ")
-# liczba = int(liczba)
-# list = []
-# while liczba>1:
-#     list.insert(0,liczba%10)
-#     liczba = liczba/10
-#     print('list: ',list)
-# lista = [ int(x) for x in list]
-# wynik = sum(lista)
-# print(wynik)
-##############################################
-# h = input("wysokosc wiezy: ")
-# h = int(h)
-# if h<=10:
-#     for num in range(h+1):
-#         for i in range(num):
-#             print("A", end="")
-#         print("\n") 
-##############################################
-h = input("wysokosc wiezy: ")
-h = int(h)
-num = (h+3)
-if h<=9 and h>=3:
-    for num in range(h+1):
-        for i in range(num):
-            print("o", end="")
-        print("\n") 
+# odziez1 = Material("sweter",180,60)
+# odziez2 = Ubrania("XL","czerwony","Władysław")
+# odziez3 = Sweter("golf")
+
+# print(odziez1.wyswietl_nazwe())
+# print(odziez2.wyswietl_dane())
+# print(odziez3.wyswietl_dane())
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# class Kwadrat():
+#     def __init__(self, x):
+#         self.x = x
+#         self.y = x
+
+#     def pole(self):
+#         return self.x * self.y
+
+#     def __add__(self,other):
+#         return self.x + other.x
+
+#     def __ge__(self,other):
+#         return self.x >= other.x
+
+#     def __gt__(self,other):
+#         return self.x > other.x
+
+#     def __le__(self,other):
+#         return self.x <= other.x
+
+#     def __lt__(self,other):
+#         return self.x < other.x
+
+# f1 = Kwadrat(5)
+# f2 = Kwadrat(10)
+
+# print(f1 + f2)
+# print(f1 >= f2)
+# print(f1 > f2)
+# print(f1 <= f2)
+# print(f1 < f2)
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# class Point:
+#     __counter = []
+
+#     def __init__(self, x=0, y=0):
+#         """Konstruktor punktu."""
+#         self.x = x
+#         self.y = y
+
+#     def update(self, n):
+#         self.__counter.append(n)
+
+# p1 = Point(0,0)
+# p2 = Point(1,1)
+# p3 = Point(2,1)
+# p4 = Point(1,2)
+
+# print(p1._Point__counter)
+# print(p2._Point__counter)
+# p1.update(1)
+# print(p1._Point__counter)
+# print(p2._Point__counter)
+# p2.update(2)
+# print(p3._Point__counter)
+# print(p4._Point__counter)
+# p3.update(5)
+# print(p1._Point__counter)
+# print(p2._Point__counter)
+# p4.update(3)
+# print(p3._Point__counter)
+# print(p4._Point__counter)
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# class Osoba:
+
+#     def __init__(self, imie, nazwisko):
+#         self.imie = imie
+#         self.nazwisko = nazwisko
+
+#     def przedstaw_sie(self):
+#         return "{} {}".format(self.imie, self.nazwisko)
+
+
+# class Pracownik(Osoba):
+
+#     def __init__(self, imie, nazwisko, pensja):
+#         Osoba.__init__(self, imie, nazwisko)
+#         # lub
+#         # super().__init__(imie, nazwisko)
+#         self.pensja = pensja
+
+#     def przedstaw_sie(self):
+#         return "{} {} i zarabiam {}".format(self.imie, self.nazwisko, self.pensja)
+
+
+# class Menadzer(Pracownik):
+
+#     def przedstaw_sie(self):
+#         return "{} {}, jestem menadżerem i zarabiam {}".format(self.imie, self.nazwisko, self.pensja)
+
+
+# jozek = Pracownik("Józek", "Bajka", 2000)
+# adrian = Menadzer("Adrian", "Mikulski", 12000)
+
+# print(jozek.przedstaw_sie())
+# print(adrian.przedstaw_sie())
+# print (isinstance(jozek,Pracownik))
+# print (issubclass(Pracownik,Osoba))
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# class Wspak:
+#     """Iterator zwracający wartości w odwróconym porządku"""
+#     def __init__(self, data):
+#         self.data = data
+#         self.index = len(data)
+
+#     def __iter__(self):
+#         if isinstance(self.data,str):
+#             return self
+
+#     # def __next__(self):
+#     #     if self.index == 0:
+#     #         raise StopIteration
+#     #     self.index = self.index - 1
+#     #     if self.index % 2 == 0:
+#     #         return print(self.data[self.index])
+
+#     def __next__(self):
+#         if self.index == 0:
+#             raise StopIteration
+#         self.index = self.index - 1
+#         if self.data[self.index] in ['A','a','E','e','I','i','O','o','U','u','Y','y']:
+#             return print(self.data[self.index])
+
+
+# wyraz = Wspak("autos") 
+# it = iter(wyraz)
+# print(it)
+# next(it)
+# next(it)
+# next(it)
+# next(it)
+# next(it)
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# def reverse(data):
+#     for index in range(len(data)-1, -1, -2):
+#         yield data[index]
+
+
+# gen = reverse("Feliks")
+# print(next(gen))
+# print(next(gen))
+# print(next(gen))
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# import itertools
+
+# lista = [0,1,2,3,4,5,6,7,8,9]
+# for a,b,c in itertools.combinations(lista,3):
+#     print (a,b,c)
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# def fibbonacci():
+#     a,b = 1,1
+#     yield a
+#     yield b
+#     while True:
+#         a,b = b,a+b
+#         yield b
+
+# g = fibbonacci()
+# print(next(g))
+# print(next(g))
+# print(next(g))
+# print(next(g))
+# print(next(g))
+# print(next(g))
+# print(next(g))
+# print(next(g))
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+def miesiace():
+    for miesiac in ["Styczeń","Luty","Marzec","Kwiecień","Maj","Czerwiec","Lipiec","Sierpień","Wrzesień","Październik","Listopad","Grudzień"]:
+        yield miesiac
+
+g = miesiace()
+
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+print (next(g))
+
